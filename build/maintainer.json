@@ -633,11 +633,12 @@
     "/ems/apple/:id": [
         "Fatpandac"
     ],
-    "/epicgames/epicgames/:collection": [
+    "/epicgames/freegames/:locale?/:country?": [
         "DIYgod",
         "NeverBehave",
         "Zyx-A",
-        "junfengP"
+        "junfengP",
+        "nczitzk"
     ],
     "/eprice/:region?": [
         "TonyRL"
@@ -1242,6 +1243,17 @@
     "/jewishmuseum/exhibitions": [
         "chazeon"
     ],
+    "/jike/topic/text/:id": [
+        "HenryQW"
+    ],
+    "/jike/topic/:id": [
+        "DIYgod",
+        "prnake"
+    ],
+    "/jike/user/:id": [
+        "DIYgod",
+        "prnake"
+    ],
     "/jisilu/:category?/:sort?/:day?": [
         "nczitzk"
     ],
@@ -1461,6 +1473,12 @@
     ],
     "/nippon/:category?": [
         "laampui"
+    ],
+    "/njit/tzgg": [
+        "zefengdaguo"
+    ],
+    "/njit/jwc/:type?": [
+        "zefengdaguo"
     ],
     "/njnu/jwc/:type": [
         "Shujakuinkuraudo"
@@ -2027,6 +2045,14 @@
     ],
     "/ulapia/reports/:category?": [
         "Fatpandac"
+    ],
+    "/uraaka-joshi/": [
+        "SettingDust",
+        "Halcao"
+    ],
+    "/uraaka-joshi/:id": [
+        "SettingDust",
+        "Halcao"
     ],
     "/ustb/yjsy/news/adma": [
         "DA1Y1"
@@ -2941,8 +2967,6 @@
     "/blogs/wangyin": [],
     "/blogs/wang54/:id?": [],
     "/blogs/wordpress/:domain/:https?": [],
-    "/uraaka-joshi": [],
-    "/uraaka-joshi/:id": [],
     "/xici/:id?": [],
     "/taoguba/index": [],
     "/taoguba/user/:uid": [],
@@ -3556,9 +3580,6 @@
     "/lizhi/user/:id": [],
     "/futunn/highlights": [],
     "/waijiedanao/article/:caty": [],
-    "/jike/topic/:id": [],
-    "/jike/topic/text/:id": [],
-    "/jike/user/:id": [],
     "/netease/news/special/:type?": [],
     "/netease/dy/:id": [],
     "/netease/dy2/:id": [],
