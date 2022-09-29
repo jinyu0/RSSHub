@@ -12717,10 +12717,28 @@
     "_name": "云听",
     ".": [
       {
-        "title": "电台节目",
-        "docs": "https://docs.rsshub.app/multimedia.html#yun-ting-dian-tai-jie-mu",
+        "title": "专辑",
+        "docs": "https://docs.rsshub.app/multimedia.html#yun-ting-zhuan-ji",
         "source": [
           "/pc-portal/sanji/detail.html",
+          "/share/albumDetail",
+          "/"
+        ]
+      },
+      {
+        "title": "节目",
+        "docs": "https://docs.rsshub.app/multimedia.html#yun-ting-jie-mu",
+        "source": [
+          "/pc-portal/sanji/detail.html",
+          "/share/albumDetail",
+          "/"
+        ]
+      },
+      {
+        "title": "直播",
+        "docs": "https://docs.rsshub.app/multimedia.html#yun-ting-zhi-bo",
+        "source": [
+          "/pc-portal/sanji/zhibo_2.html",
           "/"
         ]
       }
@@ -14562,6 +14580,20 @@
       }
     ]
   },
+  "theverge.com": {
+    "_name": "The Verge",
+    ".": [
+      {
+        "title": "The Verge",
+        "docs": "https://docs.rsshub.app/new-media.html#the-verge",
+        "source": [
+          "/rss/index.xml",
+          "/"
+        ],
+        "target": "/theverge"
+      }
+    ]
+  },
   "thwiki.cc": {
     "_name": "THBWiki",
     ".": [
@@ -15195,8 +15227,31 @@
       {
         "title": "即時新聞",
         "docs": "https://docs.rsshub.app/new-media.html#lian-he-xin-wen-wang-ji-shi-xin-wen",
-        "source": "/news/breaknews/1/:id",
+        "source": [
+          "/news/breaknews/1/:id",
+          "/"
+        ],
         "target": "/udn/news/breakingnews/:id"
+      }
+    ],
+    "global": [
+      {
+        "title": "轉角國際 - 首頁",
+        "docs": "https://docs.rsshub.app/new-media.html#lian-he-xin-wen-wang-zhuan-jiao-guo-ji-shou-ye",
+        "source": [
+          "/global_vision/index/:category",
+          "/"
+        ],
+        "target": "/udn/global/:category?"
+      },
+      {
+        "title": "轉角國際 - 標籤",
+        "docs": "https://docs.rsshub.app/new-media.html#lian-he-xin-wen-wang-zhuan-jiao-guo-ji-biao-qian",
+        "source": [
+          "/search/tagging/1020/:tag",
+          "/"
+        ],
+        "target": "/udn/global/tag/:tag?"
       }
     ]
   },
