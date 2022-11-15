@@ -652,6 +652,9 @@
     "/cdi/:id?": [
         "nczitzk"
     ],
+    "/cdzjryb/zw/projectList": [
+        "TonyRL"
+    ],
     "/cebbank/quotation/all": [
         "linbuxiao"
     ],
@@ -2853,6 +2856,9 @@
     "/nua/index/:type": [
         "evnydd0sf"
     ],
+    "/nua/lib/:type": [
+        "evnydd0sf"
+    ],
     "/nua/sxw/:type": [
         "evnydd0sf"
     ],
@@ -3802,8 +3808,9 @@
         "nczitzk",
         "bigfei"
     ],
-    "/theverge/": [
-        "HenryQW"
+    "/theverge/:hub?": [
+        "HenryQW",
+        "vbali"
     ],
     "/thwiki/calendar/:before?/:after?": [
         "aether17"
