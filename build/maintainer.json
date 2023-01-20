@@ -1228,6 +1228,9 @@
     "/economist/gre-vocabulary": [
         "xyqfer"
     ],
+    "/economist/global-business-review/:language?": [
+        "prnake"
+    ],
     "/economist/:endpoint": [
         "ImSingee"
     ],
@@ -1773,6 +1776,9 @@
     "/guancha/topic/:id/:order?": [
         "occupy5",
         "nczitzk"
+    ],
+    "/guandian/:category": [
+        "drgnchan"
     ],
     "/guangdiu/rank": [
         "fatpandac"
