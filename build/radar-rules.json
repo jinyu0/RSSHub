@@ -8185,6 +8185,20 @@
       }
     ]
   },
+  "inewsweek.cn": {
+    "_name": "中国新闻周刊",
+    ".": [
+      {
+        "title": "栏目",
+        "docs": "https://docs.rsshub.app/traditional-media.html#zhong-guo-xin-wen-zhou-kan",
+        "source": [
+          "/:channel",
+          "/"
+        ],
+        "target": "/inewsweek/:channel"
+      }
+    ]
+  },
   "infoq.cn": {
     "_name": "InfoQ 中文",
     ".": [
@@ -18447,6 +18461,18 @@
       {
         "title": "温州大学 - 主站新闻",
         "docs": "https://docs.rsshub.app/university.html#wen-zhou-da-xue"
+      }
+    ]
+  },
+  "x6d.com": {
+    "_name": "小刀娱乐网",
+    "xd": [
+      {
+        "title": "最新",
+        "docs": "https://docs.rsshub.app/new-media.html#xiao-dao-yu-le-wang",
+        "source": [
+          "/html/:id"
+        ]
       }
     ]
   },
