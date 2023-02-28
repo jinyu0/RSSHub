@@ -1291,6 +1291,35 @@
       }
     ]
   },
+  "aijishu": {
+    "_name": "极术社区",
+    "www": [
+      {
+        "title": "频道",
+        "docs": "https://docs.rsshub.app/programming.html#ji-shu-she-qu",
+        "source": [
+          "/channel/:name"
+        ],
+        "target": "/aijishu/channel/:name"
+      },
+      {
+        "title": "用户",
+        "docs": "https://docs.rsshub.app/programming.html#ji-shu-she-qu",
+        "source": [
+          "/u/:name"
+        ],
+        "target": "/aijishu/u/:name"
+      },
+      {
+        "title": "专栏",
+        "docs": "https://docs.rsshub.app/programming.html#ji-shu-she-qu",
+        "source": [
+          "/blog/:name"
+        ],
+        "target": "/aijishu/blog/:name"
+      }
+    ]
+  },
   "airchina.com.cn": {
     "_name": "中国国际航空公司",
     "www": [
@@ -19154,6 +19183,20 @@
           "/:id"
         ],
         "target": "/uraaka-joshi/:id"
+      }
+    ]
+  },
+  "urbandictionary.com": {
+    "_name": "Urban Dictionary",
+    ".": [
+      {
+        "title": "Random words",
+        "docs": "https://docs.rsshub.app/en/other.html#urban-dictionary",
+        "source": [
+          "/random.php",
+          "/"
+        ],
+        "target": "/urbandictionary/random"
       }
     ]
   },
