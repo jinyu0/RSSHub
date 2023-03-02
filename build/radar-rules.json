@@ -762,7 +762,7 @@
     ".": [
       {
         "title": "专家文章",
-        "docs": "https://docs.rsshub.app/new-media.html#jing-ji-50-ren-lun-tan",
+        "docs": "https://docs.rsshub.app/study.html#jing-ji-50-ren-lun-tan",
         "source": [
           "/home/article/index/category/zhuanjia.html",
           "/"
@@ -20453,16 +20453,14 @@
     ]
   },
   "xwlb.com.cn": {
-    "_name": "新闻联播直播",
+    "_name": "羊城晚报金羊网",
     ".": [
       {
-        "title": "新闻联播文字版完整版",
-        "docs": "https://docs.rsshub.app/traditional-media.html#yang-shi-xin-wen",
+        "title": "新闻",
+        "docs": "https://docs.rsshub.app/traditional-media.html#yang-cheng-wan-bao-jin-yang-wang",
         "source": [
-          "/cctv.html",
           "/"
-        ],
-        "target": "/xwlb"
+        ]
       }
     ]
   },
