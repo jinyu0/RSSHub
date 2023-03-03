@@ -19748,6 +19748,19 @@
       }
     ]
   },
+  "weekendhk.com": {
+    "_name": "新假期周刊",
+    ".": [
+      {
+        "title": "最新文章",
+        "docs": "https://docs.rsshub.app/traditional-media.html#xin-jia-qi-zhou-kan",
+        "source": [
+          "/"
+        ],
+        "target": "/weekendhk"
+      }
+    ]
+  },
   "weibo.cn": {
     "_name": "微博",
     "m": [
@@ -20095,6 +20108,18 @@
         "docs": "https://docs.rsshub.app/other.html#wu-chang-shou-yi-xue-yuan",
         "source": "/*",
         "target": "/wsyu/news/mtjj"
+      }
+    ]
+  },
+  "wxkol.com": {
+    "_name": "微小领",
+    ".": [
+      {
+        "title": "微信公众号",
+        "docs": "https://docs.rsshub.app/new-media.html#wei-xiao-ling",
+        "source": [
+          "/show/:id"
+        ]
       }
     ]
   },
