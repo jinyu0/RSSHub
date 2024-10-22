@@ -5164,6 +5164,47 @@
     "name": "阿基米德 FM",
     "url": "m.ajmide.com"
   },
+  "alicesoft": {
+    "routes": {
+      "/information/:category?/:game?": {
+        "url": "www.alicesoft.com/information",
+        "path": "/information/:category?/:game?",
+        "categories": [
+          "game"
+        ],
+        "example": "/alicesoft/information/game/cat377",
+        "parameters": {
+          "category": "Category in the URL, which can be accessed under カテゴリ一覧 on the website.",
+          "game": "Game-specific subcategory in the URL, which can be accessed under カテゴリ一覧 on the website. In this case, the category value should be `game`."
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.alicesoft.com/information",
+              "www.alicesoft.com/information/:category",
+              "www.alicesoft.com/information/:category/:game"
+            ],
+            "target": "/information/:category/:game"
+          }
+        ],
+        "name": "ニュース",
+        "maintainers": [
+          "keocheung"
+        ],
+        "location": "infomation.ts"
+      }
+    },
+    "name": "ALICESOFT",
+    "url": "www.alicesoft.com"
+  },
   "alipan": {
     "routes": {
       "/files/:share_id/:parent_file_id?": {
@@ -11253,8 +11294,10 @@
       "/profile/:handle": {
         "path": "/profile/:handle",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 1,
         "example": "/bsky/profile/bsky.app",
         "parameters": {
           "handle": "User handle, can be found in URL"
@@ -21463,7 +21506,8 @@
         "name": "话题",
         "maintainers": [
           "LogicJake",
-          "pseudoyu"
+          "pseudoyu",
+          "haowenwu"
         ],
         "location": "other/topic.ts"
       },
@@ -21515,8 +21559,19 @@
       },
       "/people/:userid/status/:routeParams?": {
         "path": "/people/:userid/status/:routeParams?",
-        "name": "Unknown",
-        "maintainers": [],
+        "categories": [
+          "social-media"
+        ],
+        "example": "/douban/people/75118396/status",
+        "parameters": {
+          "userid": "整数型用户 id",
+          "routeParams": "额外参数；见下"
+        },
+        "name": "用户广播",
+        "maintainers": [
+          "alfredcai"
+        ],
+        "description": "\n::: tip\n-   **目前只支持整数型 id**\n-   字母型的 id，可以通过头像图片链接来找到其整数型 id，图片命名规则`ul[userid]-*.jpg`或`u[userid]-*.jpg`，即取文件名中间的数字\n-   例如：用户 id: `MovieL`他的头像图片链接：`https://img1.doubanio.com/icon/ul1128221-98.jpg`他的整数型 id: `1128221`\n:::\n\n对于豆瓣用户广播内容，在 `routeParams` 参数中以 query string 格式设置如下选项可以控制输出的样式\n\n  | 键                         | 含义                                                           | 接受的值       | 默认值 |\n  | -------------------------- | -------------------------------------------------------------- | -------------- | ------ |\n  | readable                   | 是否开启细节排版可读性优化                                     | 0/1/true/false | false  |\n  | authorNameBold             | 是否加粗作者名字                                               | 0/1/true/false | false  |\n  | showAuthorInTitle          | 是否在标题处显示作者                                           | 0/1/true/false | true   |\n  | showAuthorInDesc           | 是否在正文处显示作者                                           | 0/1/true/false | false  |\n  | showAuthorAvatarInDesc     | 是否在正文处显示作者头像（若阅读器会提取正文图片，不建议开启） | 0/1/true/false | false  |\n  | showEmojiForRetweet        | 显示 “🔁” 取代 “Fw”（转发）                                    | 0/1/true/false | false  |\n  | showRetweetTextInTitle     | 在标题出显示转发评论（置为 false 则在标题只显示被转发的广播）  | 0/1/true/false | false  |\n  | addLinkForPics             | 为图片添加可点击的链接                                         | 0/1/true/false | false  |\n  | showTimestampInDescription | 在正文处显示广播的时间戳                                       | 0/1/true/false | false  |\n  | showComments               | 在正文处显示评论                                               | 0/1/true/false | false  |\n  | widthOfPics                | 广播配图宽（生效取决于阅读器）                                 | 不指定 / 数字  | 不指定 |\n  | heightOfPics               | 广播配图高（生效取决于阅读器）                                 | 不指定 / 数字  | 不指定 |\n  | sizeOfAuthorAvatar         | 作者头像大小                                                   | 数字           | 48     |\n\n  指定更多与默认值不同的参数选项可以改善 RSS 的可读性，如\n\n  [https://rsshub.app/douban/people/113894409/status/readable=1&authorNameBold=1&showAuthorInTitle=1&showAuthorInDesc=1&showAuthorAvatarInDesc=1&showEmojiForRetweet=1&showRetweetTextInTitle=1&addLinkForPics=1&showTimestampInDescription=1&showComments=1&widthOfPics=100](https://rsshub.app/douban/people/113894409/status/readable=1&authorNameBold=1&showAuthorInTitle=1&showAuthorInDesc=1&showAuthorAvatarInDesc=1&showEmojiForRetweet=1&showRetweetTextInTitle=1&addLinkForPics=1&showTimestampInDescription=1&showComments=1&widthOfPics=100)\n\n  的效果为\n\n  <img loading=\"lazy\" src=\"/img/readable-douban.png\" alt=\"豆瓣读书的可读豆瓣广播 RSS\" />",
         "location": "people/status.ts"
       },
       "/people/:userid/wish/:routeParams?": {
@@ -26831,8 +26886,10 @@
       "/user/:id": {
         "path": "/user/:id",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 1,
         "example": "/gettr/user/jasonmillerindc",
         "parameters": {
           "id": "User id"
@@ -44215,8 +44272,10 @@
       "/jobs/:job_types/:exp_levels/:keywords?/:routeParams?": {
         "path": "/jobs/:job_types/:exp_levels/:keywords?/:routeParams?",
         "categories": [
-          "social-media"
+          "social-media",
+          "popular"
         ],
+        "view": 5,
         "example": "/linkedin/jobs/C-P/1/software engineer",
         "parameters": {
           "job_types": "See the following table for details, use '-' as delimiter",
@@ -49547,8 +49606,8 @@
         ],
         "location": "featured-notes.ts"
       },
-      "/users/notes/:username": {
-        "path": "/users/notes/:username",
+      "/users/notes/:username/:routeParams?": {
+        "path": "/users/notes/:username/:routeParams?",
         "categories": [
           "social-media",
           "popular"
@@ -49556,7 +49615,8 @@
         "view": 1,
         "example": "/misskey/users/notes/support@misskey.io",
         "parameters": {
-          "username": "misskey username format, like support@misskey.io"
+          "username": "Misskey username in the format of username@instance.domain",
+          "routeParams": "\n| Key         | Description                        | Accepted Values | Default |\n| ----------- | ---------------------------------- | --------------- | ------- |\n| withRenotes | Include renotes in the timeline    | 0/1/true/false  | false   |\n| mediaOnly   | Only return posts containing media | 0/1/true/false  | false   |\n\nNote: `withRenotes` and `mediaOnly` are mutually exclusive and cannot both be set to true.\n\nExamples:\n- /misskey/users/notes/mttb2ccp@misskey.io/withRenotes=true\n- /misskey/users/notes/mttb2ccp@misskey.io/mediaOnly=true"
         },
         "features": {
           "requireConfig": false,
@@ -49568,7 +49628,8 @@
         },
         "name": "User timeline",
         "maintainers": [
-          "siygle"
+          "siygle",
+          "SnowAgar25"
         ],
         "location": "user-timeline.ts"
       }
@@ -70932,6 +70993,36 @@
     },
     "name": "西南石油大学",
     "url": "swpu.edu.cn"
+  },
+  "sycl": {
+    "routes": {
+      "/:feed?": {
+        "path": "/:feed?",
+        "categories": [
+          "programming"
+        ],
+        "example": "/sycltech/news",
+        "parameters": {
+          "feed": "Feed source, defaults to news, references https://feeds.sycl.tech/"
+        },
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "Feeds",
+        "maintainers": [
+          "mocusez"
+        ],
+        "description": "|  Events  | News |    Research Paper     |  Videos  |\n| :----: | :--: | :-------------: | :----: |\n| events | news | research_papers | videos |",
+        "location": "feeds.ts"
+      }
+    },
+    "name": "SYCL",
+    "url": "sycl.tech"
   },
   "syosetu": {
     "routes": {

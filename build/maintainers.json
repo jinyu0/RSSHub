@@ -376,6 +376,9 @@
   "/ajmide/:id": [
     "Fatpandac"
   ],
+  "/alicesoft/information/:category?/:game?": [
+    "keocheung"
+  ],
   "/alipan/files/:share_id/:parent_file_id?": [
     "DIYgod"
   ],
@@ -1880,7 +1883,8 @@
   ],
   "/douban/topic/:id/:sort?": [
     "LogicJake",
-    "pseudoyu"
+    "pseudoyu",
+    "haowenwu"
   ],
   "/douban/movie/ustop": [
     "DIYgod"
@@ -1889,7 +1893,9 @@
     "numm233",
     "nczitzk"
   ],
-  "/douban/people/:userid/status/:routeParams?": [],
+  "/douban/people/:userid/status/:routeParams?": [
+    "alfredcai"
+  ],
   "/douban/people/:userid/wish/:routeParams?": [
     "exherb"
   ],
@@ -4204,8 +4210,9 @@
   "/misskey/notes/featured/:site": [
     "Misaka13514"
   ],
-  "/misskey/users/notes/:username": [
-    "siygle"
+  "/misskey/users/notes/:username/:routeParams?": [
+    "siygle",
+    "SnowAgar25"
   ],
   "/misskon/posts/:routeParams?": [
     "Urabartin"
@@ -6147,6 +6154,9 @@
   ],
   "/swpu/scs/:code": [
     "CYTMWIA"
+  ],
+  "/sycl/:feed?": [
+    "mocusez"
   ],
   "/syosetu/chapter/:id": [
     "huangliangshusheng"
