@@ -2858,6 +2858,19 @@
       }
     ]
   },
+  "appstare.net": {
+    "_name": "AppStare",
+    ".": [
+      {
+        "title": "Comments",
+        "docs": "https://docs.rsshub.app/routes/program-update",
+        "source": [
+          "/"
+        ],
+        "target": "/appstare/comments/:country/:appid"
+      }
+    ]
+  },
   "app.so": {
     "_name": "App Store/Mac App Store",
     ".": [
@@ -7302,6 +7315,27 @@
       }
     ]
   },
+  "igetget.com": {
+    "_name": "得到",
+    ".": [
+      {
+        "title": "得到文章",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/dedao/articles/:id"
+      },
+      {
+        "title": "首页",
+        "docs": "https://docs.rsshub.app/routes/new-media",
+        "source": [
+          "/"
+        ],
+        "target": "/dedao/list/:category?"
+      }
+    ]
+  },
   "dedao.cn": {
     "_name": "得到",
     ".": [
@@ -7314,19 +7348,6 @@
           "/"
         ],
         "target": "/dedao/knowledge/:topic?/:type?"
-      }
-    ]
-  },
-  "igetget.com": {
-    "_name": "得到",
-    ".": [
-      {
-        "title": "首页",
-        "docs": "https://docs.rsshub.app/routes/new-media",
-        "source": [
-          "/"
-        ],
-        "target": "/dedao/list/:category?"
       }
     ]
   },
@@ -8250,6 +8271,19 @@
           "/:locale/free-games"
         ],
         "target": "/epicgames/freegames/:locale"
+      }
+    ]
+  },
+  "eshukan.com": {
+    "_name": "万维书刊网",
+    "www": [
+      {
+        "title": "学术资讯",
+        "docs": "https://docs.rsshub.app/routes/study",
+        "source": [
+          "/academic/index.aspx"
+        ],
+        "target": "/eshukan(_,url)=>{url=new URL(url);const id=url.searchParams.get(\"id\");return`/academic${id?`/${id}`:\"\"}`}"
       }
     ]
   },
@@ -27989,6 +28023,19 @@
           "/"
         ],
         "target": "/warthunder/news"
+      }
+    ]
+  },
+  "washingtonpost.com": {
+    "_name": "The Washington Post",
+    "www": [
+      {
+        "title": "App",
+        "docs": "https://docs.rsshub.app/routes/traditional-media",
+        "source": [
+          "/:category"
+        ],
+        "target": "/washingtonpost/app/:category"
       }
     ]
   },
