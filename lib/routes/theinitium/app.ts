@@ -9,7 +9,7 @@ import { getCurrentPath } from '@/utils/helpers';
 
 export const route: Route = {
     path: '/app/:category?',
-    categories: ['new-media'],
+    categories: ['new-media', 'popular'],
     example: '/theinitium/app',
     parameters: {
         category: 'Category, see below, latest_sc by default',
@@ -131,6 +131,10 @@ async function handler(ctx) {
                 });
                 const article = $('.pp-article__body');
                 article.find('.block-related-articles').remove();
+                article.find('figure.wp-block-pullquote').children().unwrap();
+                article.find('div.block-explanation-note').wrapInner('<blockquote></blockquote>');
+                article.find('div.wp-block-tcc-author-note').wrapInner('<em></em>').after('<hr>');
+                article.find('p.has-small-font-size').wrapInner('<small></small>');
                 item.description = art(path.join(__dirname, 'templates/description.art'), {
                     standfirst: $('.pp-header-group__standfirst').html(),
                     coverImage: $('.pp-media__image').attr('src'),
