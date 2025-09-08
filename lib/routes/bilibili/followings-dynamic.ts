@@ -5,8 +5,9 @@ import { config } from '@/config';
 import utils from './utils';
 import JSONbig from 'json-bigint';
 import { fallback, queryToBoolean } from '@/utils/readable-social';
-import querystring from 'querystring';
+import querystring from 'node:querystring';
 import ConfigNotFoundError from '@/errors/types/config-not-found';
+import logger from '@/utils/logger';
 
 export const route: Route = {
     path: '/followings/dynamic/:uid/:routeParams?',
@@ -18,7 +19,7 @@ export const route: Route = {
 | 键         | 含义                              | 接受的值       | 默认值 |
 | ---------- | --------------------------------- | -------------- | ------ |
 | showEmoji  | 显示或隐藏表情图片                | 0/1/true/false | false  |
-| embed      | 默认开启内嵌视频                  | 任意值         |        |
+| embed      | 默认开启内嵌视频                  | 0/1/true/false |  true  |
 | useAvid    | 视频链接使用 AV 号 (默认为 BV 号) | 0/1/true/false | false  |
 | directLink | 使用内容直链                      | 0/1/true/false | false  |
 | hideGoods  | 隐藏带货动态                      | 0/1/true/false | false  |
@@ -45,9 +46,9 @@ export const route: Route = {
     name: '用户关注动态',
     maintainers: ['TigerCubDen', 'JimenezLi'],
     handler,
-    description: `:::warning
+    description: `::: warning
   用户动态需要 b 站登录后的 Cookie 值，所以只能自建，详情见部署页面的配置模块。
-  :::`,
+:::`,
 };
 
 async function handler(ctx) {
@@ -55,7 +56,7 @@ async function handler(ctx) {
     const routeParams = querystring.parse(ctx.req.param('routeParams'));
 
     const showEmoji = fallback(undefined, queryToBoolean(routeParams.showEmoji), false);
-    const embed = !ctx.req.param('embed');
+    const embed = fallback(undefined, queryToBoolean(routeParams.embed), true);
     const displayArticle = fallback(undefined, queryToBoolean(routeParams.displayArticle), false);
 
     const name = await cache.getUsernameFromUID(uid);
@@ -132,9 +133,14 @@ async function handler(ctx) {
         data.map(async (item) => {
             const parsed = JSONbig.parse(item.card);
             const data = parsed.apiSeasonInfo || (getTitle(parsed.item) ? parsed.item : parsed);
-            // parsed.origin is already parsed, and it may be json or string.
-            // Don't parse it again, or it will cause an error.
-            const origin = parsed.origin || null;
+            let origin = parsed.origin;
+            if (origin) {
+                try {
+                    origin = JSONbig.parse(origin);
+                } catch {
+                    logger.warn(`card.origin '${origin}' is not falsy-valued or a JSON string, fall back to unparsed value`);
+                }
+            }
 
             // img
             let imgHTML = '';

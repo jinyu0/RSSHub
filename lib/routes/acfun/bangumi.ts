@@ -4,7 +4,7 @@ import { parseDate } from '@/utils/parse-date';
 
 export const route: Route = {
     path: '/bangumi/:id',
-    categories: ['anime', 'popular'],
+    categories: ['anime'],
     view: ViewType.Videos,
     example: '/acfun/bangumi/5022158',
     parameters: { id: '番剧 id' },
@@ -19,7 +19,7 @@ export const route: Route = {
     name: '番剧',
     maintainers: ['xyqfer'],
     handler,
-    description: `:::tip
+    description: `::: tip
 番剧 id 不包含开头的 aa。
 例如：\`https://www.acfun.cn/bangumi/aa5022158\` 的番剧 id 是 5022158，不包括开头的 aa。
 :::`,

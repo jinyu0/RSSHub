@@ -7,7 +7,7 @@ import { processContent } from './utils';
 
 export const route: Route = {
     path: '/:lang/:category?',
-    categories: ['anime', 'popular'],
+    categories: ['anime'],
     view: ViewType.Articles,
     example: '/pixivision/zh-tw',
     parameters: { lang: 'Language', category: 'Category' },
@@ -21,9 +21,9 @@ export const route: Route = {
     },
     name: 'Category',
     maintainers: ['SnowAgar25'],
-    description: `:::tip
+    description: `::: tip
   \`https://www.pixivision.net/zh-tw/c/interview\` → \`/pixivision/zh-tw/interview\`
-  :::`,
+:::`,
     radar: [
         {
             source: ['www.pixivision.net/:lang'],
