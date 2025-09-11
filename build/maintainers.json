@@ -4393,9 +4393,6 @@
   "/javtrailers/studios/:studio": [
     "TonyRL"
   ],
-  "/jbma/report/:filter{.+}?": [
-    "nczitzk"
-  ],
   "/jd/price/:id": [
     "nczitzk"
   ],
